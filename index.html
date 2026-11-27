@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f5f7fb">
+  <title>Kanban • Gestão de Projeto</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <div class="brand-mark" aria-hidden="true">K</div>
+      <div class="brand-copy">
+        <p class="eyebrow">GESTÃO DE PROJETO</p>
+        <h1>Quadro Kanban</h1>
+        <p class="subtitle">Organize as etapas, acompanhe o progresso e mantenha tudo em movimento.</p>
+      </div>
+      <div class="project-pill"><span class="status-dot"></span> Projeto em andamento</div>
+    </header>
+
+    <section class="overview" aria-label="Resumo do projeto">
+      <div class="overview-copy">
+        <span class="overview-label">VISÃO GERAL</span>
+        <strong>Fluxo de desenvolvimento</strong>
+        <span class="overview-hint">Marque o checklist de cada card e arraste para a próxima coluna quando ele estiver liberado.</span>
+        <div class="legenda">
+          <span class="l-verde">Liberado: pode avançar</span>
+          <span class="l-vermelho">Bloqueado: ainda falta algo</span>
+        </div>
+      </div>
+      <div class="overall-progress">
+        <div class="progress-heading"><span>Progresso das tarefas</span><strong id="progressValue">0%</strong></div>
+        <div class="progress-track"><span id="progressBar"></span></div>
+      </div>
+    </section>
+
+    <section class="board" aria-label="Quadro de tarefas">
+      <div class="column column-todo">
+        <div class="column-heading">
+          <div class="column-title"><span class="column-icon">○</span><h2>A Fazer</h2><span class="count" id="count-afazer">0</span></div>
+          <p>Quando estiver liberado, arraste para Fazendo</p>
+        </div>
+        <div class="lista" id="afazer"></div>
+      </div>
+
+      <div class="column column-doing">
+        <div class="column-heading">
+          <div class="column-title"><span class="column-icon">◷</span><h2>Fazendo</h2><span class="count" id="count-fazendo">0</span></div>
+          <p>Quando terminar, arraste para Feito</p>
+        </div>
+        <div class="lista" id="fazendo"></div>
+      </div>
+
+      <div class="column column-done">
+        <div class="column-heading">
+          <div class="column-title"><span class="column-icon">✓</span><h2>Feito</h2><span class="count" id="count-feito">0</span></div>
+          <p>Etapas concluídas</p>
+        </div>
+        <div class="lista" id="feito"></div>
+      </div>
+    </section>
+  </main>
+  <script src="js/script.js"></script>
+</body>
+</html>
